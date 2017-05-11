@@ -1,0 +1,63 @@
+# Turn rewrite engine on
+Options +FollowSymlinks
+RewriteEngine on
+
+# map neat URL to internal URL
+RewriteRule ^support/listu/$   RestController.php?page_key=listUs [nc,qsa]
+RewriteRule ^support/listu$   RestController.php?page_key=listUs [nc,qsa]
+
+# lista usuarios especifico.
+
+RewriteRule ^support/listu/([-a-zA-Z0-9]+)/$   RestController.php?page_key=listUsu&id=$1 [NC,L,QSA]
+RewriteRule ^support/listu/([-a-zA-Z0-9]+)$   RestController.php?page_key=listUsu&id=$1 [NC,L,QSA]
+RewriteRule ^support/listu([-a-zA-Z0-9]+)$   support/listu/$1/ [L,R=301]
+
+# lista de solicitudes por cliente
+
+RewriteRule ^support/selsol/([-a-zA-Z0-9]+)/$   RestController.php?page_key=selSolici&id=$1 [NC,L,QSA]
+RewriteRule ^support/selsol/([-a-zA-Z0-9]+)$   RestController.php?page_key=selSolici&id=$1 [NC,L,QSA]
+RewriteRule ^support/selsol([-a-zA-Z0-9]+)$   support/selsol/$1/ [L,R=301]
+
+# busqueda de solicitudes
+
+RewriteRule ^support/bussol/([-a-zA-Z0-9]+)/$   RestController.php?page_key=buscSolici&id=$1 [NC,L,QSA]
+RewriteRule ^support/bussol/([-a-zA-Z0-9]+)$   RestController.php?page_key=buscSolici&id=$1 [NC,L,QSA]
+RewriteRule ^support/bussol([-a-zA-Z0-9]+)$   support/bussol/$1/ [L,R=301]
+
+# registro de solicitudes
+
+RewriteRule ^support/regsol/$   RestController.php?page_key=regSoli [nc,qsa]
+RewriteRule ^support/regsol$   RestController.php?page_key=regSoli [nc,qsa]
+
+# lista de todos los sistemas actuales
+
+RewriteRule ^support/lissist/$   RestController.php?page_key=listSiste [nc,qsa]
+RewriteRule ^support/lissist$   RestController.php?page_key=listSiste [nc,qsa]
+
+# lista clasificados
+
+RewriteRule ^support/lisclas/$   RestController.php?page_key=lisClasi [nc,qsa]
+RewriteRule ^support/lisclas$   RestController.php?page_key=lisClasi [nc,qsa]
+
+# registro de adjuntos
+
+RewriteRule ^support/regadj/$   RestController.php?page_key=regAdju [nc,qsa]
+RewriteRule ^support/regadj$   RestController.php?page_key=regAdju [nc,qsa]
+
+# seleccione solicitudes y adjuntos para editar
+
+RewriteRule ^support/selsoledit/([-a-zA-Z0-9]+)/$   RestController.php?page_key=selSoliEdit&id=$1 [NC,L,QSA]
+RewriteRule ^support/selsoledit/([-a-zA-Z0-9]+)$   RestController.php?page_key=selSoliEdit&id=$1 [NC,L,QSA]
+RewriteRule ^support/selsoledit([-a-zA-Z0-9]+)$   support/selsoledit/$1/ [L,R=301]
+
+# editar solicitud
+
+RewriteRule ^support/editsol/([-a-zA-Z0-9]+)/$   RestController.php?page_key=editSoli&id=$1 [NC,L,QSA]
+RewriteRule ^support/editsol/([-a-zA-Z0-9]+)$   RestController.php?page_key=editSoli&id=$1 [NC,L,QSA]
+RewriteRule ^support/editsol([-a-zA-Z0-9]+)$   support/editsol/$1/ [L,R=301]
+
+# registras atencion
+
+RewriteRule ^support/regaten/([-a-zA-Z0-9]+)/$   RestController.php?page_key=regAtenc&id=$1 [NC,L,QSA]
+RewriteRule ^support/regaten/([-a-zA-Z0-9]+)$   RestController.php?page_key=regAtenc&id=$1 [NC,L,QSA]
+RewriteRule ^support/regaten([-a-zA-Z0-9]+)$   support/regaten/$1/ [L,R=301]
